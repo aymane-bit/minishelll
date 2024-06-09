@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:13:04 by akajjou           #+#    #+#             */
-/*   Updated: 2024/06/07 15:23:14 by akajjou          ###   ########.fr       */
+/*   Updated: 2024/06/08 21:16:47 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,13 @@ int		heredoc_checker_first(token_ptr tokens_list)
 		{
 			if (tmp->next == NULL)
 			{
-				ft_putstr_fd("syntax error near unexpected token `newline'\n", 2);
-				return 1;
+				print_error("syntax error near unexpected token `newline'");
+				return (1);
 			}
-			if (tmp->next->token_type == 0)
-				while (tmp->next->token_type == 0)
-				{
-					tmp = tmp->next;
-					if (tmp->next == NULL)
-					{
-						ft_putstr_fd("syntax error near unexpected token `newline'\n", 2);
-						return 1;
-					}
-				}
 		}
 		tmp = tmp->next;
 	}
-	return 0;
+	return (0);
 }
 int		append_checker_second(token_ptr tokens_list)
 {
@@ -52,19 +42,9 @@ int		append_checker_second(token_ptr tokens_list)
 		{
 			if (tmp->next == NULL)
 			{
-				ft_putstr_fd("syntax error near unexpected token `newline'\n", 2);
+				print_error("syntax error near unexpected token `newline'");
 				return 1;
 			}
-			if (tmp->next->token_type == 0)
-				while (tmp->next->token_type == 0)
-				{
-					tmp = tmp->next;
-					if (tmp->next == NULL)
-					{
-						ft_putstr_fd("syntax error near unexpected token `newline'\n", 2);
-						return 1;
-					}
-				}
 		}
 		tmp = tmp->next;
 	}

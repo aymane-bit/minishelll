@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 10:30:47 by achahid-          #+#    #+#             */
-/*   Updated: 2024/06/07 23:09:46 by akajjou          ###   ########.fr       */
+/*   Updated: 2024/06/08 23:34:48 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int    ft_type_check(token_ptr tokens_list)
 		return 1;
 	if (redirections_checker(tokens_list) == 1)
 		return 1;
-	if (semicolon_checker(tokens_list) == 1)
-		return 1;
-	if (backslash_checker(tokens_list) == 1)
-		return 1;
-	if (parentheses_checker(tokens_list) == 1)
-		return 1;
+	// if (semicolon_checker(tokens_list) == 1)
+	// 	return 1;
+	// if (backslash_checker(tokens_list) == 1)
+	// 	return 1;
+	// if (parentheses_checker(tokens_list) == 1)
+	// 	return 1;
 	if (heredoc_append_checker(tokens_list) == 1)
 		return 1;
 	
@@ -47,9 +47,9 @@ void 		build_in(token_ptr tokens_list)
 	// 	ft_env();
 }
 
-
 int	parser_tokens(token_ptr tokens_list)
 {
+	token_ptr tmp = tokens_list;
 	if (tokens_list == NULL)
 		return  0;
 	if (ft_type_check(tokens_list) == 1)

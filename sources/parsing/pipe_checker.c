@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 22:46:43 by akajjou           #+#    #+#             */
-/*   Updated: 2024/06/07 15:19:12 by akajjou          ###   ########.fr       */
+/*   Updated: 2024/06/08 21:02:18 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,16 @@ int	first_pipe_checker(token_ptr tokens_list)
 	tmp = tokens_list;
 	if (tmp->token_type == 1)
 	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `|'\n", 2);
+		print_error("minishell: syntax error near unexpected token `|'");
 		return (1);
 	}
 	while (tmp)
 	{
 		if (tmp->token_type == 1)
 		{
-			if (tmp->next && tmp->next->token_type == 0)
-				while (tmp->next && tmp->next->token_type == 0)
-					tmp = tmp->next;
 			if (tmp->next == NULL || tmp->next->token_type == 1)
 			{
-				ft_putstr_fd("minishell: syntax error near unexpected token `|'\n",
-								2);
+				print_error("minishell: syntax error near unexpected token `|'");
 				return (1);
 			}
 		}
@@ -49,15 +45,12 @@ int	last_pipe_checker(token_ptr tokens_list)
 		tmp = tmp->next;
 	if (tmp->token_type == 1)
 	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `|'\n", 2);
+		print_error("minishell: syntax error near unexpected token `|'");
 		return (1);
 	}
-	else if (tmp->token_type == 0)
-		while (tmp->previous && tmp->token_type == 0)
-			tmp = tmp->previous;
 	if (tmp->token_type == 1)
 	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `|'\n", 2);
+		print_error("minishell: syntax error near unexpected token `|'");
 		return (1);
 	}
 	return (0);
@@ -73,7 +66,7 @@ int	second_pipe_checker(token_ptr tokens_list)
 			tmp = tmp->next;
 	if (tmp->token_type == 1)
 	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `|'\n", 2);
+		print_error("minishell: syntax error near unexpected token `|'");
 		return (1);
 	}
 	return (0);

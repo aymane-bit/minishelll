@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 10:31:11 by achahid-          #+#    #+#             */
-/*   Updated: 2024/06/07 22:21:39 by akajjou          ###   ########.fr       */
+/*   Updated: 2024/06/08 19:26:24 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <termios.h>
 # include "../libft/libft.h"
 # include <readline/readline.h>
+# include <fcntl.h>
 # include <readline/history.h>
 
 /* fd */

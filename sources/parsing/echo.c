@@ -6,7 +6,7 @@
 /*   By: akajjou <akajjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 22:18:40 by akajjou           #+#    #+#             */
-/*   Updated: 2024/06/07 23:07:37 by akajjou          ###   ########.fr       */
+/*   Updated: 2024/06/08 23:37:19 by akajjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ token_ptr    echo_skipper(token_ptr tmp)
             tmp = tmp->next;
         return (tmp);
 }
+
 void	ft_echo(token_ptr tokens_list)
 {
     token_ptr	tmp;
